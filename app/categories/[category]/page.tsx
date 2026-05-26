@@ -52,7 +52,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
-      { "@type": "ListItem", position: 2, name: "Categories", item: `${siteConfig.url}/categories` },
+      { "@type": "ListItem", position: 2, name: "Categories", item: `${siteConfig.url}/recipes` },
       {
         "@type": "ListItem",
         position: 3,

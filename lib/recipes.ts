@@ -101,14 +101,20 @@ const recipeSort = (a: Recipe, b: Recipe) => {
   return new Date(b.date).getTime() - new Date(a.date).getTime();
 };
 
+let cachedRecipes: Recipe[] | null = null;
+
 export const getAllRecipes = (): Recipe[] => {
+  if (cachedRecipes) return cachedRecipes;
+
   if (!fs.existsSync(RECIPES_DIR)) return [];
 
-  return fs
+  cachedRecipes = fs
     .readdirSync(RECIPES_DIR)
     .filter((fileName) => fileName.endsWith(".mdx"))
     .map(parseRecipeFile)
     .sort(recipeSort);
+
+  return cachedRecipes;
 };
 
 export const getRecipeBySlug = (slug: string): Recipe | null => {
