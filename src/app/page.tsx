@@ -1,65 +1,107 @@
-import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+import { ItemListJsonLd } from "@/components/RecipeJsonLd";
+import { RecipeCard } from "@/components/RecipeCard";
+import { buildMetadata } from "@/lib/seo";
+import { getAllCategories, getAllRecipes, getFeaturedRecipes, slugifyCategory } from "@/lib/recipes";
+
+export const metadata = buildMetadata({
+  description: "Discover elegant, approachable recipes with polished photography, rich metadata, and simple tools for saving and sharing.",
+  path: "/",
+});
+
+export default function HomePage() {
+  const featuredRecipes = getFeaturedRecipes();
+  const latestRecipes = getAllRecipes().slice(0, 4);
+  const categories = getAllCategories();
+  const leadRecipe = featuredRecipes[0];
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <ItemListJsonLd
+        title="Featured recipes"
+        description="A curated list of featured recipes from Saffron Table."
+        path="/"
+        recipes={featuredRecipes}
+      />
+      <section className="home-hero container section-spacing">
+        <div className="home-hero-copy">
+          <p className="eyebrow">Fast, static, and made to be cooked from</p>
+          <h1>Elegant recipes that stay practical from first glance to final step.</h1>
+          <p className="hero-copy">
+            Browse dishes with clean structure, useful cooking notes, and lightweight tools for saving favorites or sharing them with the people you cook for.
           </p>
+          <div className="action-row">
+            <Link href="/recipes" className="primary-button">
+              Explore recipes
+            </Link>
+            <Link href="#categories" className="secondary-button">
+              Browse categories
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        {leadRecipe ? (
+          <article className="hero-feature-card">
+            <p className="eyebrow">Featured today</p>
+            <h2>
+              <Link href={leadRecipe.url}>{leadRecipe.title}</Link>
+            </h2>
+            <p>{leadRecipe.description}</p>
+            <div className="tag-row">
+              <span className="tag">{leadRecipe.category}</span>
+              <span className="tag">{leadRecipe.servings}</span>
+            </div>
+          </article>
+        ) : null}
+      </section>
+
+      <section className="container section-spacing">
+        <div className="section-heading-row">
+          <div>
+            <p className="eyebrow">Featured recipes</p>
+            <h2>Strong flavors, clearly presented.</h2>
+          </div>
+          <Link href="/recipes" className="text-link">
+            View all recipes
+          </Link>
         </div>
-      </main>
-    </div>
+        <div className="recipe-grid">
+          {featuredRecipes.map((recipe) => (
+            <RecipeCard key={recipe.slug} recipe={recipe} />
+          ))}
+        </div>
+      </section>
+
+      <section className="container section-spacing">
+        <div className="section-heading-row">
+          <div>
+            <p className="eyebrow">Latest from the kitchen</p>
+            <h2>Fresh recipes with room for real notes and useful detail.</h2>
+          </div>
+        </div>
+        <div className="recipe-grid recipe-grid-tight">
+          {latestRecipes.map((recipe) => (
+            <RecipeCard key={recipe.slug} recipe={recipe} />
+          ))}
+        </div>
+      </section>
+
+      <section id="categories" className="container section-spacing category-panel">
+        <div className="section-heading-row">
+          <div>
+            <p className="eyebrow">Browse categories</p>
+            <h2>Move from craving to category in one tap.</h2>
+          </div>
+        </div>
+        <div className="category-list" role="list">
+          {categories.map((category) => (
+            <Link key={category} href={`/categories/${slugifyCategory(category)}`} className="category-link">
+              <span>{category}</span>
+              <span aria-hidden="true">→</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,0 +1,23 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cakeTitle cakeDesc">
+  <title id="cakeTitle">Chocolate layer cake with berries</title>
+  <desc id="cakeDesc">A stylized chocolate layer cake on a cake stand with glossy frosting and fresh berries.</desc>
+  <rect width="1600" height="1000" fill="oklch(0.97 0.01 20)"/>
+  <rect x="100" y="124" width="1400" height="752" rx="48" fill="oklch(0.9 0.02 18)"/>
+  <ellipse cx="800" cy="774" rx="280" ry="64" fill="oklch(0.82 0.02 30)"/>
+  <path d="M682 720C684 676 694 626 712 570H888C906 626 916 676 918 720H682Z" fill="oklch(0.64 0.03 24)"/>
+  <path d="M560 714C612 676 692 652 800 648C908 652 988 676 1040 714C966 742 886 756 800 756C714 756 634 742 560 714Z" fill="oklch(0.76 0.03 28)"/>
+  <path d="M590 624C590 486 682 368 800 368C918 368 1010 486 1010 624H590Z" fill="oklch(0.33 0.03 28)"/>
+  <path d="M612 604C618 492 694 404 800 404C906 404 982 492 988 604H612Z" fill="oklch(0.28 0.03 25)"/>
+  <path d="M650 514C664 468 726 436 800 436C874 436 936 468 950 514C902 550 852 568 800 568C748 568 698 550 650 514Z" fill="oklch(0.22 0.02 22)"/>
+  <ellipse cx="800" cy="398" rx="178" ry="48" fill="oklch(0.36 0.02 20)"/>
+  <ellipse cx="800" cy="384" rx="160" ry="34" fill="oklch(0.26 0.02 16)"/>
+  <g>
+    <circle cx="728" cy="326" r="24" fill="oklch(0.58 0.22 18)"/>
+    <circle cx="774" cy="308" r="20" fill="oklch(0.55 0.23 12)"/>
+    <circle cx="828" cy="314" r="22" fill="oklch(0.53 0.2 7)"/>
+    <circle cx="874" cy="334" r="20" fill="oklch(0.58 0.22 18)"/>
+    <path d="M800 310C808 288 824 270 850 254" stroke="oklch(0.55 0.11 145)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M784 312C776 288 760 270 734 254" stroke="oklch(0.55 0.11 145)" stroke-width="14" stroke-linecap="round"/>
+  </g>
+  <path d="M492 800C636 758 742 738 810 740C878 742 982 762 1122 800" stroke="oklch(0.8 0.02 30)" stroke-width="18" stroke-linecap="round"/>
+</svg>

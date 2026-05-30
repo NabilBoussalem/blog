@@ -1,0 +1,30 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="tagineTitle tagineDesc">
+  <title id="tagineTitle">Chicken tagine with olives and preserved lemon</title>
+  <desc id="tagineDesc">A stylized overhead serving of chicken tagine in a glazed dish with saffron broth, olives, and herbs.</desc>
+  <rect width="1600" height="1000" fill="oklch(0.97 0.02 85)"/>
+  <rect x="88" y="92" width="1424" height="816" rx="48" fill="oklch(0.89 0.03 85)"/>
+  <ellipse cx="803" cy="508" rx="450" ry="300" fill="oklch(0.62 0.09 70)"/>
+  <ellipse cx="803" cy="500" rx="390" ry="250" fill="oklch(0.8 0.09 85)"/>
+  <ellipse cx="803" cy="500" rx="330" ry="210" fill="oklch(0.74 0.11 70)"/>
+  <path d="M610 432C654 372 734 348 810 344C886 348 966 372 1010 432C1036 470 1038 530 1018 572C982 646 902 698 810 704C718 698 638 646 602 572C582 530 584 470 610 432Z" fill="oklch(0.72 0.15 65)"/>
+  <path d="M646 418C694 382 748 374 808 372C868 374 922 382 970 418C930 464 874 510 808 550C742 510 686 464 646 418Z" fill="oklch(0.66 0.16 63)"/>
+  <path d="M640 568C690 596 746 610 810 614C874 610 930 596 980 568C946 626 888 666 810 676C732 666 674 626 640 568Z" fill="oklch(0.79 0.13 78)"/>
+  <g fill="oklch(0.55 0.08 125)">
+    <circle cx="1036" cy="458" r="24"/>
+    <circle cx="1076" cy="522" r="20"/>
+    <circle cx="1000" cy="580" r="22"/>
+    <circle cx="576" cy="556" r="22"/>
+    <circle cx="620" cy="490" r="20"/>
+    <circle cx="956" cy="384" r="18"/>
+  </g>
+  <g fill="oklch(0.86 0.14 94)">
+    <path d="M1074 378C1120 396 1148 438 1150 492C1108 472 1080 430 1074 378Z"/>
+    <path d="M546 386C594 398 628 430 640 484C594 474 560 438 546 386Z"/>
+  </g>
+  <g stroke="oklch(0.6 0.09 155)" stroke-width="18" stroke-linecap="round">
+    <path d="M680 662C714 642 744 620 768 596"/>
+    <path d="M820 628C854 610 892 582 926 548"/>
+    <path d="M710 338C726 364 736 392 738 424"/>
+    <path d="M876 344C866 372 856 392 840 416"/>
+  </g>
+</svg>
