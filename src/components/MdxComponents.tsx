@@ -15,7 +15,7 @@ function toDimension(value: string | number | undefined, fallback: number) {
 }
 
 function MdxImage(props: ComponentProps<"img">) {
-  if (!props.src) {
+  if (typeof props.src !== "string") {
     return null;
   }
 

@@ -15,7 +15,8 @@ export function ShareRecipeButton({ title, url }: { title: string; url: string }
         setLabel("Link copied");
       }
     } catch {
-      setLabel("Share");
+      setLabel("Unable to share");
+      window.setTimeout(() => setLabel("Share"), 1800);
       return;
     }
 

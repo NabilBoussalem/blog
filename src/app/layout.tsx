@@ -1,23 +1,39 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Manrope, Prata } from "next/font/google";
+import localFont from "next/font/local";
 
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { absoluteUrl, siteConfig } from "@/lib/seo";
 
 import "../styles/globals.css";
 
-const bodyFont = Manrope({
+const bodyFont = localFont({
   variable: "--font-body",
-  subsets: ["latin"],
   display: "swap",
+  src: [
+    {
+      path: "./fonts/Lato-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Lato-Semibold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
 });
 
-const displayFont = Prata({
+const displayFont = localFont({
   variable: "--font-display",
-  subsets: ["latin"],
-  weight: "400",
   display: "swap",
+  src: [
+    {
+      path: "./fonts/LiberationSerif-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
 });
 
 const themeScript = `

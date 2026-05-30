@@ -43,7 +43,7 @@ const readRecipeEntries = cache(() => {
 });
 
 export function getAllRecipes() {
-  return readRecipeEntries().map(({ body: _body, ...recipe }) => recipe);
+  return readRecipeEntries().map((recipe) => toSummary(recipe));
 }
 
 export function getRecipeBySlug(slug: string) {

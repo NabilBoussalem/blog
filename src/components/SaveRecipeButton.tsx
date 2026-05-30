@@ -36,13 +36,15 @@ export function SaveRecipeButton({
   variant?: "solid" | "ghost";
 }) {
   const [saved, setSaved] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const className = useMemo(() => `save-button ${variant === "ghost" ? "save-button-ghost" : ""}`.trim(), [variant]);
 
   useEffect(() => {
-    const savedRecipes = readSavedRecipes();
-    setSaved(savedRecipes.includes(slug));
-    setMounted(true);
+    const frame = window.requestAnimationFrame(() => {
+      const savedRecipes = readSavedRecipes();
+      setSaved(savedRecipes.includes(slug));
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, [slug]);
 
   const toggleSave = () => {
@@ -61,7 +63,7 @@ export function SaveRecipeButton({
       aria-label={`${saved ? "Remove" : "Save"} ${title}`}
     >
       <span aria-hidden="true">{saved ? "★" : "☆"}</span>
-      <span>{mounted && saved ? "Saved" : "Save"}</span>
+      <span>{saved ? "Saved" : "Save"}</span>
     </button>
   );
 }

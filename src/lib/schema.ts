@@ -2,11 +2,21 @@ import { z } from "zod";
 
 import { absoluteUrl } from "@/lib/seo";
 
-const isoDateString = z.string().refine((value) => !Number.isNaN(Date.parse(value)), {
-  message: "Expected a valid date string",
-});
+const isoDateString = z.preprocess((value) => {
+  if (value instanceof Date) {
+    return value.toISOString().slice(0, 10);
+  }
 
-const durationString = z.string().regex(/^P(T(?=\d)(\d+H)?(\d+M)?(\d+S)?)$/u, {
+  return value;
+}, z.string().refine((value) => !Number.isNaN(Date.parse(value)), {
+  message: "Expected a valid date string",
+}));
+
+const durationString = z.string().refine((value) => {
+  const match = /^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/u.exec(value);
+
+  return Boolean(match && (match[1] !== undefined || match[2] !== undefined || match[3] !== undefined));
+}, {
   message: "Expected an ISO-8601 duration like PT45M or PT1H30M",
 });
 
