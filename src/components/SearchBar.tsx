@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type SearchBarProps = {
   defaultQuery: string;
   categories: string[];
@@ -59,12 +61,12 @@ export function SearchBar({
         >
           Apply
         </button>
-        <a
+        <Link
           href="/recipes"
           className="inline-flex h-[50px] items-center justify-center rounded-full border border-border bg-white px-5 text-sm font-semibold text-foreground transition hover:border-accent/30 hover:text-accent"
         >
           Reset
-        </a>
+        </Link>
       </div>
     </form>
   );

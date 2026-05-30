@@ -25,8 +25,8 @@
   --color-olive: var(--olive);
   --color-gold: var(--gold);
   --color-ring: var(--ring);
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+  --font-sans: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 }
 
 * {
@@ -45,7 +45,7 @@ body {
     radial-gradient(circle at bottom right, rgba(110, 119, 81, 0.12), transparent 25%),
     var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-sans);
 }
 
 ::selection {
