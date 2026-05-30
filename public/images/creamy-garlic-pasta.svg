@@ -1,0 +1,12 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#F4E7D8"/>
+  <circle cx="600" cy="450" r="310" fill="#FFF8EF"/>
+  <circle cx="600" cy="450" r="250" fill="#E8C9A8"/>
+  <path d="M430 450C430 356.112 506.112 280 600 280C693.888 280 770 356.112 770 450C770 543.888 693.888 620 600 620C506.112 620 430 543.888 430 450Z" fill="#F7F0E5"/>
+  <path d="M470 437C517 398 571 379 630 381C682 382 723 404 744 443" stroke="#E0B06A" stroke-width="22" stroke-linecap="round"/>
+  <path d="M456 500C498 542 551 563 615 560C673 557 719 535 747 496" stroke="#E0B06A" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="509" cy="391" r="10" fill="#6E7751"/>
+  <circle cx="665" cy="549" r="10" fill="#6E7751"/>
+  <circle cx="713" cy="423" r="10" fill="#6E7751"/>
+  <text x="72" y="812" fill="#6B4C3B" font-family="Georgia, serif" font-size="62">Creamy Garlic Pasta</text>
+</svg>

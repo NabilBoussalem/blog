@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: #f6f1e8;
+  --foreground: #2f241d;
+  --card: #fffaf2;
+  --muted: #6f6155;
+  --border: rgba(109, 85, 63, 0.12);
+  --accent: #bf6f4f;
+  --accent-strong: #9f5334;
+  --olive: #6e7751;
+  --gold: #b9924c;
+  --ring: rgba(191, 111, 79, 0.35);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-olive: var(--olive);
+  --color-gold: var(--gold);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-playfair);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(191, 111, 79, 0.14), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(110, 119, 81, 0.12), transparent 25%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+}
+
+::selection {
+  background: rgba(191, 111, 79, 0.18);
+}
+
+main {
+  flex: 1;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+img {
+  display: block;
+}
+
+.prose {
+  --tw-prose-body: #4d443c;
+  --tw-prose-headings: #2f241d;
+  --tw-prose-links: #9f5334;
+  --tw-prose-bold: #2f241d;
+  --tw-prose-bullets: #bf6f4f;
+  --tw-prose-counters: #6e7751;
+  --tw-prose-quotes: #58453a;
+  --tw-prose-quote-borders: rgba(191, 111, 79, 0.2);
+  --tw-prose-captions: #6f6155;
+  --tw-prose-code: #8d4b31;
+  --tw-prose-pre-bg: #2f241d;
+}

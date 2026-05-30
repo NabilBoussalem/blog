@@ -1,0 +1,12 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#EEE0D0"/>
+  <rect x="190" y="180" width="820" height="500" rx="72" fill="#FFF8EF"/>
+  <rect x="270" y="260" width="660" height="340" rx="48" fill="#D88B5C"/>
+  <ellipse cx="480" cy="430" rx="135" ry="92" fill="#C66D47"/>
+  <ellipse cx="718" cy="454" rx="152" ry="104" fill="#C66D47"/>
+  <circle cx="673" cy="329" r="44" fill="#F1D36E"/>
+  <circle cx="781" cy="369" r="18" fill="#6E7751"/>
+  <circle cx="397" cy="520" r="18" fill="#6E7751"/>
+  <circle cx="845" cy="484" r="18" fill="#6E7751"/>
+  <text x="72" y="812" fill="#6B4C3B" font-family="Georgia, serif" font-size="62">Lemon Olive Chicken</text>
+</svg>

@@ -1,0 +1,11 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#EFE3D4"/>
+  <rect x="244" y="168" width="712" height="530" rx="54" fill="#FFF8EF"/>
+  <rect x="320" y="252" width="560" height="362" rx="42" fill="#F2D8C9"/>
+  <path d="M372 432C465 318 652 302 804 388C717 533 542 577 372 432Z" fill="#D98562"/>
+  <path d="M430 356C495 392 556 418 639 434" stroke="#FFF1E8" stroke-width="18" stroke-linecap="round"/>
+  <path d="M414 520C454 486 493 459 545 444" stroke="#6E7751" stroke-width="16" stroke-linecap="round"/>
+  <path d="M672 494C710 461 742 428 770 383" stroke="#6E7751" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="783" cy="292" r="34" fill="#E5C15C"/>
+  <text x="72" y="812" fill="#6B4C3B" font-family="Georgia, serif" font-size="62">Herb-Roasted Salmon</text>
+</svg>
