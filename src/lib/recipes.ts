@@ -6,6 +6,23 @@ import { RecipeMeta } from "./types";
 /** Directory where MDX recipe files are stored */
 const recipesDirectory = path.join(process.cwd(), "content/recipes");
 
+/** Parse frontmatter data into a typed RecipeMeta object */
+function parseRecipeMeta(slug: string, data: Record<string, unknown>): RecipeMeta {
+  return {
+    slug,
+    title: (data.title as string) ?? "",
+    description: (data.description as string) ?? "",
+    image: (data.image as string) ?? "",
+    category: (data.category as string) ?? "",
+    prepTime: (data.prepTime as string) ?? "",
+    cookTime: (data.cookTime as string) ?? "",
+    servings: (data.servings as number) ?? 0,
+    difficulty: (data.difficulty as string) ?? "",
+    date: (data.date as string) ?? "",
+    featured: (data.featured as boolean) ?? false,
+  };
+}
+
 /** Read all MDX files and return parsed frontmatter metadata */
 export function getAllRecipes(): RecipeMeta[] {
   const files = fs.readdirSync(recipesDirectory).filter((f) => f.endsWith(".mdx"));
@@ -15,20 +32,7 @@ export function getAllRecipes(): RecipeMeta[] {
     const filePath = path.join(recipesDirectory, filename);
     const fileContent = fs.readFileSync(filePath, "utf-8");
     const { data } = matter(fileContent);
-
-    return {
-      slug,
-      title: data.title ?? "",
-      description: data.description ?? "",
-      image: data.image ?? "",
-      category: data.category ?? "",
-      prepTime: data.prepTime ?? "",
-      cookTime: data.cookTime ?? "",
-      servings: data.servings ?? 0,
-      difficulty: data.difficulty ?? "",
-      date: data.date ?? "",
-      featured: data.featured ?? false,
-    } satisfies RecipeMeta;
+    return parseRecipeMeta(slug, data);
   });
 
   // Sort by date descending (newest first)
@@ -47,19 +51,7 @@ export function getRecipeBySlug(slug: string): { meta: RecipeMeta; content: stri
   const { data, content } = matter(fileContent);
 
   return {
-    meta: {
-      slug,
-      title: data.title ?? "",
-      description: data.description ?? "",
-      image: data.image ?? "",
-      category: data.category ?? "",
-      prepTime: data.prepTime ?? "",
-      cookTime: data.cookTime ?? "",
-      servings: data.servings ?? 0,
-      difficulty: data.difficulty ?? "",
-      date: data.date ?? "",
-      featured: data.featured ?? false,
-    },
+    meta: parseRecipeMeta(slug, data),
     content,
   };
 }
