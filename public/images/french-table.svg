@@ -1,0 +1,14 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1500" fill="#F8D8A8"/>
+  <rect x="120" y="160" width="960" height="1180" rx="80" fill="#FFF7ED"/>
+  <circle cx="600" cy="520" r="220" fill="#B45309" opacity="0.12"/>
+  <circle cx="380" cy="1020" r="120" fill="#D97706" opacity="0.18"/>
+  <circle cx="830" cy="970" r="150" fill="#A16207" opacity="0.16"/>
+  <path d="M355 515C355 379.69 464.69 270 600 270C735.31 270 845 379.69 845 515C845 650.31 735.31 760 600 760C464.69 760 355 650.31 355 515Z" fill="#FFF1D6"/>
+  <path d="M450 515C450 432.157 517.157 365 600 365C682.843 365 750 432.157 750 515C750 597.843 682.843 665 600 665C517.157 665 450 597.843 450 515Z" fill="#F97316" opacity="0.72"/>
+  <path d="M530 432C553 472 583 530 676 556" stroke="#FFF7ED" stroke-width="28" stroke-linecap="round"/>
+  <path d="M260 1010C260 943.726 313.726 890 380 890C446.274 890 500 943.726 500 1010C500 1076.27 446.274 1130 380 1130C313.726 1130 260 1076.27 260 1010Z" fill="#84CC16" opacity="0.75"/>
+  <path d="M700 970C700 887.157 767.157 820 850 820C932.843 820 1000 887.157 1000 970C1000 1052.84 932.843 1120 850 1120C767.157 1120 700 1052.84 700 970Z" fill="#DC2626" opacity="0.72"/>
+  <path d="M520 1210H820" stroke="#A16207" stroke-width="26" stroke-linecap="round"/>
+  <text x="600" y="1288" text-anchor="middle" fill="#7C2D12" font-family="Georgia, serif" font-size="84" font-weight="700">Saveurs</text>
+</svg>

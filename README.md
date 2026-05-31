@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Saveurs Françaises
 
-## Getting Started
+A modern French recipe blog built with Next.js App Router, TypeScript, Tailwind CSS, and MDX recipe posts.
 
-First, run the development server:
+## What this project includes
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Static recipe pages generated from MDX files in `/content/recipes`
+- SEO-friendly page metadata, including dynamic metadata for each recipe
+- Search and category filtering on the recipes page
+- Reusable UI components for layout and recipe content
+- Five sample French recipes ready to edit or extend
+
+## Folder structure
+
+```text
+content/recipes        MDX recipe posts with frontmatter
+public/images          Recipe artwork used by the sample posts
+src/app                App Router pages and layouts
+src/components         Reusable UI building blocks
+src/lib                Recipe loading and parsing utilities
+src/types              Shared TypeScript types
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How a recipe is loaded
 
-## Learn More
+1. `src/lib/recipes.ts` reads MDX files from `content/recipes`.
+2. `gray-matter` parses the frontmatter metadata.
+3. The recipes page lists the parsed recipe summaries.
+4. The dynamic route at `src/app/recipes/[slug]/page.tsx` statically generates one page per recipe and renders the MDX body.
 
-To learn more about Next.js, take a look at the following resources:
+## Add a new recipe
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Create a new `.mdx` file in `/content/recipes`.
+2. Use this frontmatter shape at the top of the file:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```md
+---
+title: "Recipe title"
+description: "Short summary for cards and SEO."
+image: "/images/your-image.svg"
+category: "Main Dish"
+prepTime: "20 minutes"
+cookTime: "40 minutes"
+servings: 4
+difficulty: "Easy"
+date: "2026-05-31"
+featured: false
+---
+```
 
-## Deploy on Vercel
+3. Write the recipe body in MDX using sections such as `## Ingredients` and `## Instructions`.
+4. Add the referenced image to `/public/images`.
+5. Run `npm run dev` to preview the new page locally.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Main files to review
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/lib/recipes.ts` — reads and sorts recipe files
+- `src/app/page.tsx` — home page hero, featured recipes, and recent recipes
+- `src/app/recipes/page.tsx` — searchable recipe archive
+- `src/app/recipes/[slug]/page.tsx` — statically generated recipe detail page
+- `src/components/*` — layout and recipe presentation components
+
+## Notes
+
+The contact page currently provides the form UI only, with no backend submission handler.
