@@ -69,10 +69,7 @@ export function getRelatedRecipes(currentSlug: string, limit = 3): RecipeMeta[] 
           recipe.tags.some((tag) => current.tags.includes(tag)))
     )
     .slice(0, limit)
-    .map(({ content, ...meta }) => {
-      void content;
-      return meta;
-    });
+    .map(({ content: _c, ...meta }) => meta);
 }
 
 export function getAllCategories(): { name: string; count: number }[] {

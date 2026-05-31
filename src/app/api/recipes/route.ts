@@ -19,10 +19,7 @@ export async function GET(request: NextRequest) {
   const categories = getAllCategories().map((c) => c.name);
 
   return NextResponse.json({
-    recipes: recipes.map(({ content, ...meta }) => {
-      void content;
-      return meta;
-    }),
+    recipes: recipes.map(({ content: _c, ...meta }) => meta),
     categories,
   });
 }
