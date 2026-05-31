@@ -3,8 +3,8 @@
 :root {
   --background: #f7f1e7;
   --foreground: #2f241b;
-  --font-sans: var(--font-manrope);
-  --font-serif: var(--font-cormorant);
+  --font-sans-stack: "Inter", "Avenir Next", "Segoe UI", sans-serif;
+  --font-serif-stack: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
 }
 
 @theme inline {
@@ -28,8 +28,8 @@
   --color-gold-300: #e4c46e;
   --color-gold-400: #d7ae4d;
   --color-gold-500: #bb8e22;
-  --font-sans: var(--font-manrope);
-  --font-serif: var(--font-cormorant);
+  --font-sans: var(--font-sans-stack);
+  --font-serif: var(--font-serif-stack);
   --shadow-card: 0 18px 40px rgba(63, 45, 30, 0.08);
 }
 
@@ -47,7 +47,7 @@ body {
     radial-gradient(circle at top, rgba(215, 174, 77, 0.14), transparent 28%),
     var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans-stack);
 }
 
 a {
